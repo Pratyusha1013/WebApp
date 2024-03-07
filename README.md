@@ -111,5 +111,8 @@ This project aims to develop a web-based platform for selling home decor product
 </li>
 </ol>
 
+![Database ER diagram](https://github.com/Pratyusha1013/WebApp/assets/135672480/9fa6cf3d-005b-451f-8953-bf0e89da2fe3)
+
+
 
 
