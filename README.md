@@ -111,7 +111,8 @@ This project aims to develop a web-based platform for selling home decor product
 </li>
 </ol>
 
-![Database ER diagram](https://github.com/Pratyusha1013/WebApp/assets/135672480/c5cacb58-e661-42f4-83c3-4ca91cb38815)
+![Database ER diagram (crow's foot) (2)](https://github.com/Pratyusha1013/WebApp/assets/135672480/7ab61686-e827-409b-91ba-791692a505b6)
+
 
 SQL Tables
 
