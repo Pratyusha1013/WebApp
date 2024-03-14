@@ -53,6 +53,7 @@ This project aims to develop a web-based platform for selling home decor product
 </ol>
 </li>
 </ol>
+![Blank diagram (1)](https://github.com/Pratyusha1013/WebApp/assets/135672480/4377ece7-dec4-4d0b-8f8e-7d007219ade3)
 
 ## Business Rules
 <ol>
