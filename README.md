@@ -111,7 +111,35 @@ This project aims to develop a web-based platform for selling home decor product
 </li>
 </ol>
 
-![Database ER diagram](https://github.com/Pratyusha1013/WebApp/assets/135672480/9fa6cf3d-005b-451f-8953-bf0e89da2fe3)
+![Database ER diagram (crow's foot) (2)](https://github.com/Pratyusha1013/WebApp/assets/135672480/7ab61686-e827-409b-91ba-791692a505b6)
+
+Relations
+![Blank diagram (1)](https://github.com/Pratyusha1013/WebApp/assets/135672480/4377ece7-dec4-4d0b-8f8e-7d007219ade3)
+
+
+SQL Tables
+
+<img width="475" alt="image" src="https://github.com/Pratyusha1013/WebApp/assets/135672480/2740bb7d-59c4-4849-a85b-e693ab51ef54">
+
+<img width="212" alt="image" src="https://github.com/Pratyusha1013/WebApp/assets/135672480/df63b581-c5a1-42f6-b784-3aa4d61864f4">
+
+<img width="216" alt="image" src="https://github.com/Pratyusha1013/WebApp/assets/135672480/8d9fba05-4198-4aa6-9c57-825fb7b245fe">
+
+<img width="368" alt="image" src="https://github.com/Pratyusha1013/WebApp/assets/135672480/5030761b-a873-4e87-be45-b9a62af89459">
+
+<img width="332" alt="image" src="https://github.com/Pratyusha1013/WebApp/assets/135672480/d35e88f0-87f1-463d-9248-c68ea4c4741d">
+
+<img width="285" alt="image" src="https://github.com/Pratyusha1013/WebApp/assets/135672480/9ba2c904-474d-4b26-91c2-29eab0d1a933">
+
+
+
+
+
+
+
+
+
+
 
 
 
