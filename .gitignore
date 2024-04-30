@@ -1,6 +1,5 @@
-<<<<<<< HEAD
-# Created by https://www.toptal.com/developers/gitignore/api/node,dotenv
-# Edit at https://www.toptal.com/developers/gitignore?templates=node,dotenv
+# Created by https://www.toptal.com/developers/gitignore/api/dotenv,node,visualstudiocode
+# Edit at https://www.toptal.com/developers/gitignore?templates=dotenv,node,visualstudiocode
 
 ### dotenv ###
 .env
@@ -144,7 +143,23 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
-# End of https://www.toptal.com/developers/gitignore/api/node,dotenv
-=======
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+!.vscode/*.code-snippets
 
->>>>>>> e0968878448f6f5f38fb8b619827fa4729d44978
+# Local History for Visual Studio Code
+.history/
+
+# Built Visual Studio Code Extensions
+*.vsix
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+.ionide
+
+# End of https://www.toptal.com/developers/gitignore/api/dotenv,node,visualstudiocode
