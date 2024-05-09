@@ -24,7 +24,7 @@ router
 
 .put('/editProduct', async (req, res) => {
   try {
-    await Product.editProduct(req.body);
+    await Product.editProduct(req.params.productID);
     res.send({success: true});
   } catch(err) {
     res.status(500).send({message: err.message});

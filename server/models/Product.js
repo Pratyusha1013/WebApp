@@ -37,9 +37,14 @@ async function editProduct(product) {
     Price = ${product.Price},
     CategoryID = ${product.CategoryID},
     Quantity = ${product.Quantity}
-    
+    WHERE ProductID = ${product.ProductID}  
   `;
   await con.query(sql);
+}
+
+async function getProductByID(productID) {
+  let sql = `SELECT * FROM Product WHERE ProductID = ${productID};`;
+  return await con.query(sql);
 }
 
 async function deleteProduct(productID) {
@@ -50,4 +55,4 @@ async function deleteProduct(productID) {
   await con.query(sql);
 }
 
-module.exports = { createProductTable, getAllProducts, addProduct, editProduct, deleteProduct };
+module.exports = { createProductTable, getAllProducts, addProduct, editProduct, getProductByID, deleteProduct };

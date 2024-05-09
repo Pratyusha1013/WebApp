@@ -62,17 +62,28 @@
         </ul>
     </nav>
     
-        
-        <div class="container">
-            <h1>Items</h1>
-            <div id="item">
-                <h2 class="itemname">Ganesha idol</h2>
-                <img src="./images/ganeshaidol.jpg" alt="Ganesha Idol">
-                <p class="itemprice">Price: $9.99</p>
-                <button>Add to Cart</button>
-            </div>  
-        </div>    
-        <script src="./scripts/Items.js"></script>
-        
+    <div class="container">
+        <h1>Items</h1>
+        <form id="itemForm">
+            <label for="productName">Product Name</label>
+            <input type="text" id="productName" name="productName"><br><br>
+            
+            <label for="description">Description</label>
+            <textarea id="description" name="description"></textarea><br><br>
+            
+            <label for="price">Price</label>
+            <input type="text" id="price" name="price"><br><br>
+            
+            <label for="categoryID">Category ID</label>
+            <input type="text" id="categoryID" name="categoryID"><br><br>
+            
+            <label for="quantity">Quantity</label>
+            <input type="text" id="quantity" name="quantity"><br><br>
+            
+            <button type="submit">Add Product</button>
+        </form>
+    </div>    
+        <script src="./Product.js"></script>
+        <script src="./User.js"></script>
 </body>
 </html>

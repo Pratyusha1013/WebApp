@@ -93,3 +93,6 @@ async function deleteAccount(user) {
 }
 
 module.exports = { getAllUsers, login, register, editUsername, deleteAccount }
+
+
+
