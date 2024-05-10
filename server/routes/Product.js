@@ -22,21 +22,21 @@ router
   }
 })
 
-.put('/editProduct', async (req, res) => {
+.put('/editProduct/:productID', async (req, res) => {
   try {
-    await Product.editProduct(req.params.productID);
-    res.send({success: true});
-  } catch(err) {
-    res.status(500).send({message: err.message});
+    await Product.editProduct(req.params.productID, req.body);
+    res.send({ success: true });
+  } catch (err) {
+    res.status(500).send({ message: err.message });
   }
 })
 
 .delete('/deleteProduct/:productID', async (req, res) => {
   try {
     await Product.deleteProduct(req.params.productID);
-    res.send({success: true});
-  } catch(err) {
-    res.status(500).send({message: err.message});
+    res.send({ success: true });
+  } catch (err) {
+    res.status(500).send({ message: err.message });
   }
 });
 

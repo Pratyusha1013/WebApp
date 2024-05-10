@@ -1,13 +1,46 @@
+
 import { fetchData } from "./Main.js";
 
 const itemForm = document.getElementById("itemForm");
-
 
 if (itemForm) {
   itemForm.addEventListener('submit', addItem);
 }
 
-function addItem(e) {
+async function fetchProductInstances() {
+  try {
+    const response = await fetchData('/products/getProducts');
+    if (!response.ok) {
+      throw new Error('Failed to fetch product instances');
+    }
+    const instances = await response.json();
+    displayProductInstances(instances);
+  } catch (error) {
+    console.error('Error fetching product instances:', error);
+  }
+}
+
+function displayProductInstances(instances) {
+  const container = document.getElementById("productID");
+  container.innerHTML = ''; 
+  
+  instances.forEach(instance => {
+    const instanceElement = document.createElement('div');
+    instanceElement.classList.add('product-instance');
+
+    instanceElement.innerHTML = `
+      <p><strong>Product Name:</strong> ${instance.ProductName}</p>
+      <p><strong>Description:</strong> ${instance.Description}</p>
+      <p><strong>Price:</strong> ${instance.Price}</p>
+      <p><strong>Category ID:</strong> ${instance.CategoryID}</p>
+      <p><strong>Quantity:</strong> ${instance.Quantity}</p>
+    `;
+    
+    container.appendChild(instanceElement);
+  });
+}
+
+async function addItem(e) {
   e.preventDefault();
 
   const productName = document.getElementById("productName").value;
@@ -24,31 +57,43 @@ function addItem(e) {
     Quantity: quantity
   };
 
-  addProduct(newItem)
-    .then(data => {
-      console.log("Product added successfully:", data);
-    })
-    .catch(err => {
-      console.error("Error adding product:", err);
-    });
+  try {
+    const response = await fetch ('/products/addProduct', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(newItem)
+  });
+  if (!response.ok) {
+      throw new Error('Failed to add product');
+  }
+  fetchProductInstances();
+  console.log("Product added successfully");
+} catch (error) {
+  console.error("Error adding product:", error);
 }
+}
+
 
 async function addProduct(newItem) {
   return fetchData('/products', newItem, 'POST');
 }
 
-
-async function updateProduct(categoryID, updatedProduct) {
-  return fetchData(`/products/${categoryID}`, updatedProduct, 'PUT');
+async function updateProduct(productID, updatedProduct) {
+  return fetchData(`/products/${productID}`, updatedProduct, 'PUT');
 }
 
-
-async function deleteProducts(categoryID) {
-  return fetchData(`/products/${categoryID}`, {}, 'DELETE');
+async function deleteProduct(productID) {
+  return fetchData(`/products/${productID}`, {}, 'DELETE');
 }
 
-function getProduct(categoryID) {
-    return JSON.parse(localStorage.getItem(categoryID),'GET');
-  }
-  
-export { addProduct, updateProduct, deleteProducts, getProduct };
+function getProductbyID(productID) {
+  return JSON.parse(localStorage.getItem(productID), 'GET');
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchProductInstances();
+});
+
+export { addProduct, updateProduct, deleteProduct, getProductbyID };

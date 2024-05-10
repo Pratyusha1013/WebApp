@@ -92,6 +92,7 @@ async function deleteAccount(user) {
   await con.query(sql)
 }
 
+
 module.exports = { getAllUsers, login, register, editUsername, deleteAccount }
 
 

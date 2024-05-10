@@ -64,26 +64,35 @@
     
     <div class="container">
         <h1>Items</h1>
+        <div id="productID"></div> 
         <form id="itemForm">
             <label for="productName">Product Name</label>
-            <input type="text" id="productName" name="productName"><br><br>
+            <input type="text" id="productName" name="productName" value="Ganesh Idol"><br><br>
             
             <label for="description">Description</label>
-            <textarea id="description" name="description"></textarea><br><br>
+            <textarea id="description" name="description">Ganesh Idol</textarea><br><br>
             
             <label for="price">Price</label>
-            <input type="text" id="price" name="price"><br><br>
+            <input type="text" id="price" name="price" value="10"><br><br>
             
             <label for="categoryID">Category ID</label>
-            <input type="text" id="categoryID" name="categoryID"><br><br>
+            <input type="text" id="categoryID" name="categoryID" value="101"><br><br>
             
             <label for="quantity">Quantity</label>
-            <input type="text" id="quantity" name="quantity"><br><br>
+            <select id="quantity" name="quantity">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select><br><br>
+
+            <label for="image">Image</label><br>
+            <img src="../public/images/ganeshaidol.jpg" alt="Ganesha Image" width="200"><br><br>
             
             <button type="submit">Add Product</button>
         </form>
     </div>    
-        <script src="./Product.js"></script>
-        <script src="./User.js"></script>
+    <script src="./Product.js"></script>
 </body>
 </html>

@@ -1,5 +1,4 @@
-import { getCurrentUser, setCurrentUser, removeUser, getCurrentItem} from "./User.js";
-import { addProduct, updateProduct, deleteProducts, getProduct  } from "./Product.js";
+import { getCurrentUser, removeUser} from "./User.js";
 
 let nav = document.querySelector("nav");
 
@@ -20,6 +19,9 @@ if (getCurrentUser()) {
     </ul>
   `;
 }
+
+let logoutBtn = document.getElementById("logout")
+logoutBtn.addEventListener('click', removeUser)
 
 export async function fetchData(route = '', data = {}, methodType) 
 {

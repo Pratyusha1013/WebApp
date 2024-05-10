@@ -72,45 +72,6 @@ function Login(e) {
   document.getElementById("welcome").innerText = `Welcome ${Username}!`;
 }
 
-const itemForm = document.getElementById("itemForm");
-
-if (itemForm) {
-  itemForm.addEventListener('submit', addItem);
-}
-
-function addItem(e) {
-  e.preventDefault();
-
-  const productName = document.getElementById("productName").value;
-  const description = document.getElementById("description").value;
-  const price = document.getElementById("price").value;
-  const categoryID = document.getElementById("categoryID").value;
-  const quantity = document.getElementById("quantity").value;
-
-  const newItem = {
-    productName: productName,
-    description: description,
-    price: price,
-    categoryID: categoryID,
-    quantity: quantity
-  };
-
-  fetchData('/products/addProduct', newItem, 'POST')
-    .then(data => {
-      console.log("Item added successfully:", data);
-      document.getElementById("item").innerText = `${productName} added successfully!`;
-      localStorage.setItem('newItem', JSON.stringify(newItem));
-    })
-    .catch(err => {
-      console.error("Error adding item:", err);
-    });
-}
-
-function getCurrentItem() {
-  return JSON.parse(localStorage.getItem('newItem'));
-}
-
-
 function setCurrentUser(user) {
   localStorage.setItem('user', JSON.stringify(user));
 }
@@ -124,4 +85,13 @@ function removeUser() {
   window.location.href = 'index.html';
 }
 
-export { getCurrentUser, setCurrentUser, removeUser, getCurrentItem };
+async function getUserByID(userID) {
+  try {
+    const response = await fetchData(`/users/${userID}`, {}, 'GET');
+    return response;
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+export { getCurrentUser, setCurrentUser, removeUser, getUserByID };
